@@ -6,7 +6,7 @@ A practical reference entry for product and engineering: the Linly-Talker notes,
 
 ## Images
 
-[![Linly-Talker](images/preview.png)](https://github.com/Swift-Tech-Co)
+[![Linly-Talker](images/preview.png)](https://github.com/Swift-Tech-Co/Linly-Talker)
 
 ## Introduction
 
@@ -35,7 +35,7 @@ The design philosophy of Linly-Talker is to create a new form of human-computer 
 > 
 > Perfect for building AI assistants, digital human receptionists, interactive guides, or live Q&A scenarios.
 
-[![The system architecture of multimodal humancomputer interaction.](docs/HOI_en.png)](https://www.swifttechco.com)
+[![The system architecture of multimodal humancomputer interaction.](docs/HOI_en.png)](https://github.com/Swift-Tech-Co/Linly-Talker)
 
 > [!NOTE]
 >
@@ -78,16 +78,16 @@ The design philosophy of Linly-Talker is to create a new form of human-computer 
 
 |                        文字/语音对话                         |                          数字人回答                          |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|                 应对压力最有效的方法是什么？                 | <video src="https://www.swifttechco.com"></video> |
-|                      如何进行时间管理？                      | <video src="https://www.swifttechco.com"></video> |
-|  撰写一篇交响乐音乐会评论，讨论乐团的表演和观众的整体体验。  | <video src="https://www.swifttechco.com"></video> |
-| 翻译成中文：Luck is a dividend of sweat. The more you sweat, the luckier you get. | <video src="https://www.swifttechco.com"></video> |
+|                 应对压力最有效的方法是什么？                 | <video src="https://github.com/Swift-Tech-Co/Linly-Talker"></video> |
+|                      如何进行时间管理？                      | <video src="https://github.com/Swift-Tech-Co/Linly-Talker"></video> |
+|  撰写一篇交响乐音乐会评论，讨论乐团的表演和观众的整体体验。  | <video src="https://github.com/Swift-Tech-Co/Linly-Talker"></video> |
+| 翻译成中文：Luck is a dividend of sweat. The more you sweat, the luckier you get. | <video src="https://github.com/Swift-Tech-Co/Linly-Talker"></video> |
 
 ## Setup Environment
 
 > [!NOTE]
 >
-> AutoDL has released an image, which can be used directly at https://www.swifttechco.com. You can also create an environment directly using Docker. I will continue to update the image.
+> AutoDL has released an image, which can be used directly at https://github.com/Swift-Tech-Co/Linly-Talker. You can also create an environment directly using Docker. I will continue to update the image.
 >
 > ```bash
 > docker pull registry.cn-beijing.aliyuncs.com/codewithgpu2/kedreamix-linly-talker:afGA8RPDLf
@@ -99,7 +99,7 @@ The design philosophy of Linly-Talker is to create a new form of human-computer 
 Download the code:
 
 ```bash
-git clone https://www.swifttechco.com --depth 1
+git clone https://github.com/Swift-Tech-Co/Linly-Talker --depth 1
 
 cd Linly-Talker
 git submodule update --init --recursive
@@ -123,21 +123,21 @@ conda activate linly
 
 # PyTorch Installation Option 2: Using pip  
 # CUDA 11.8  
-# pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://www.swifttechco.com  
+# pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://github.com/Swift-Tech-Co/Linly-Talker  
 # CUDA 12.1  
-# pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://www.swifttechco.com  
+# pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://github.com/Swift-Tech-Co/Linly-Talker  
 # CUDA 12.4  
-# pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://www.swifttechco.com  
-pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://www.swifttechco.com
+# pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://github.com/Swift-Tech-Co/Linly-Talker  
+pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://github.com/Swift-Tech-Co/Linly-Talker
 
 conda install -q ffmpeg==4.2.2 # ffmpeg==4.2.2
 
 # Upgrade pip
 python -m pip install --upgrade pip
 # Change the PyPI source to speed up the installation of packages
-pip config set global.index-url https://www.swifttechco.com
+pip config set global.index-url https://github.com/Swift-Tech-Co/Linly-Talker
 
-pip install tb-nightly -i https://www.swifttechco.com
+pip install tb-nightly -i https://github.com/Swift-Tech-Co/Linly-Talker
 pip install -r requirements_webui.txt
 
 # Install dependencies related to musetalk
@@ -157,7 +157,7 @@ mim install "mmpose>=1.1.0"
 # pip install CosyVoice/pretrained_models/CosyVoice-ttsfrd/ttsfrd-0.3.6-cp38-cp38-linux_x86_64.whl
 
 # Install NeRF-based dependencies, which might have several issues and can be skipped initially
-pip install "git+https://www.swifttechco.com"
+pip install "git+https://github.com/Swift-Tech-Co/Linly-Talker"
 # If you encounter problems installing PyTorch3D, you can use the following command to install it:
 # python scripts/install_pytorch3d.py
 pip install -r TFG/requirements_nerf.txt
@@ -195,7 +195,7 @@ Below are some older installation methods, which might cause dependency conflict
 > conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
 > 
 > # PyTorch Installation Method 2: Pip Installation
-> pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://www.swifttechco.com
+> pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://github.com/Swift-Tech-Co/Linly-Talker
 > 
 > conda install -q ffmpeg # ffmpeg==4.2.2
 > 
@@ -208,7 +208,7 @@ Below are some older installation methods, which might cause dependency conflict
 > conda create -n linly python=3.10  
 > conda activate linly
 > 
-> pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://www.swifttechco.com
+> pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://github.com/Swift-Tech-Co/Linly-Talker
 > 
 > conda install -q ffmpeg # ffmpeg==4.2.2
 > 
@@ -222,7 +222,7 @@ Below are some older installation methods, which might cause dependency conflict
 >
 > ```bash
 > # Install dependencies for NeRF
-> pip install "git+https://www.swifttechco.com"
+> pip install "git+https://github.com/Swift-Tech-Co/Linly-Talker"
 > pip install -r TFG/requirements_nerf.txt
 > 
 > # If there are issues with PyAudio, you can install the corresponding dependencies
@@ -289,11 +289,11 @@ If the download speed is too slow, consider using a mirror site. For more inform
 ```bash
 # Download pre-trained models from HuggingFace
 git lfs install
-git clone https://www.swifttechco.com --depth 1
-# git lfs clone https://www.swifttechco.com --depth 1
+git clone https://github.com/Swift-Tech-Co/Linly-Talker --depth 1
+# git lfs clone https://github.com/Swift-Tech-Co/Linly-Talker --depth 1
 
 # pip install -U huggingface_hub
-# export HF_ENDPOINT=https://www.swifttechco.com # Use a mirror site
+# export HF_ENDPOINT=https://github.com/Swift-Tech-Co/Linly-Talker # Use a mirror site
 huggingface-cli download --resume-download --local-dir-use-symlinks False Kedreamix/Linly-Talker --local-dir Linly-Talker
 ```
 
@@ -303,8 +303,8 @@ huggingface-cli download --resume-download --local-dir-use-symlinks False Kedrea
 # Download pre-trained models from Modelscope
 # 1. Using git
 git lfs install
-git clone https://www.swifttechco.com --depth 1
-# git lfs clone https://www.swifttechco.com
+git clone https://github.com/Swift-Tech-Co/Linly-Talker --depth 1
+# git lfs clone https://github.com/Swift-Tech-Co/Linly-Talker
 
 # 2. Download using Python code
 pip install modelscope
@@ -360,13 +360,11 @@ ssl_keyfile = "./https_cert/key.pem"
 
 This file allows you to adjust parameters such as the device running port, API running port, Linly model path, and SSL certificate paths for ease of deployment and configuration.
 
-
 ## API Documentation
 
 In the [api/README.md](api/README.md) file, we provide detailed information about the usage and configuration of the Linly-Talker API. This documentation includes information on how to call the API, the required parameters, and the format of the returned data. By reviewing these documents, users can gain a comprehensive understanding of how to utilize the API to implement various Linly-Talker functionalities, including starting conversations, uploading images, performing speech recognition, and generating speech.
 
 For detailed API interface descriptions, please refer to the `api/README.md` file.
-
 
 ## ASR - Speech Recognition
 
@@ -374,13 +372,11 @@ For detailed information about the usage and code implementation of Automatic Sp
 
 ### Whisper
 
-To implement ASR (Automatic Speech Recognition) using OpenAI's Whisper, you can refer to the specific usage methods provided in the GitHub repository: https://www.swifttechco.com
-
+To implement ASR (Automatic Speech Recognition) using OpenAI's Whisper, you can refer to the specific usage methods provided in the GitHub repository: https://github.com/Swift-Tech-Co/Linly-Talker
 
 ### FunASR
 
-The speech recognition performance of Alibaba's FunASR is quite impressive and it is actually better than Whisper in terms of Chinese language. Additionally, FunASR is capable of achieving real-time results, making it a great choice. You can experience FunASR by accessing the FunASR file in the ASR folder. Please refer to https://www.swifttechco.com for more information.
-
+The speech recognition performance of Alibaba's FunASR is quite impressive and it is actually better than Whisper in terms of Chinese language. Additionally, FunASR is capable of achieving real-time results, making it a great choice. You can experience FunASR by accessing the FunASR file in the ASR folder. Please refer to https://github.com/Swift-Tech-Co/Linly-Talker for more information.
 
 ### Coming Soon
 
@@ -392,16 +388,15 @@ For detailed information about the usage and code implementation of Text-to-Spee
 
 ### Edge TTS
 
-To use Microsoft Edge's online text-to-speech service from Python without needing Microsoft Edge or Windows or an API key, you can refer to the GitHub repository at https://www.swifttechco.com. It provides a Python module called "edge-tts" that allows you to utilize the service. You can find detailed installation instructions and usage examples in the repository's README file.
+To use Microsoft Edge's online text-to-speech service from Python without needing Microsoft Edge or Windows or an API key, you can refer to the GitHub repository at https://github.com/Swift-Tech-Co/Linly-Talker. It provides a Python module called "edge-tts" that allows you to utilize the service. You can find detailed installation instructions and usage examples in the repository's README file.
 
 > [!Warning]
 >
 > Due to some issues with the Edge TTS repository, it seems that Microsoft has restricted certain IPs. For more details, refer to 403 error is back/need to implement Sec-MS-GEC token and Add support for clock adjustment for Sec-MS-GEC token. The solution is still unstable for now. I have made some modifications, but if it continues to be unstable, please consider using alternative methods. I recommend using the CosyVoice method.
 
-
 ### PaddleTTS
 
-In practical use, there may be scenarios that require offline operation. Since Edge TTS requires an online environment to generate speech, we have chosen PaddleSpeech, another open-source alternative, for Text-to-Speech (TTS). Although there might be some differences in the quality, PaddleSpeech supports offline operations. For more information, you can refer to the GitHub page of PaddleSpeech: https://www.swifttechco.com.
+In practical use, there may be scenarios that require offline operation. Since Edge TTS requires an online environment to generate speech, we have chosen PaddleSpeech, another open-source alternative, for Text-to-Speech (TTS). Although there might be some differences in the quality, PaddleSpeech supports offline operations. For more information, you can refer to the GitHub page of PaddleSpeech: https://github.com/Swift-Tech-Co/Linly-Talker.
 
 ### Coming Soon
 
@@ -413,8 +408,7 @@ For detailed information about the usage and code implementation of Voice Clone,
 
 ### GPT-SoVITS（Recommend）
 
-Thank you for your open source contribution. I have also found the `GPT-SoVITS` voice cloning model to be quite impressive. You can find the project at https://www.swifttechco.com.
-
+Thank you for your open source contribution. I have also found the `GPT-SoVITS` voice cloning model to be quite impressive. You can find the project at https://github.com/Swift-Tech-Co/Linly-Talker.
 
 ### XTTS
 
@@ -428,9 +422,8 @@ Coqui XTTS is a leading deep learning toolkit for Text-to-Speech (TTS) tasks, al
 
 📚 Utility programs for dataset analysis and management.
 
-- Experience XTTS online https://www.swifttechco.com
-- Official GitHub repository: https://www.swifttechco.com
-
+- Experience XTTS online https://github.com/Swift-Tech-Co/Linly-Talker
+- Official GitHub repository: https://github.com/Swift-Tech-Co/Linly-Talker
 
 ### CosyVoice
 
@@ -469,7 +462,6 @@ Currently, Linly-Talker integrates three features from CosyVoice: pre-trained vo
 <td align="center">你好，我是通义生成式语音大模型，请问有什么可以帮您的吗？</td>
 <td align="center">
 
-
 sft.webm
 
 </td>
@@ -504,7 +496,6 @@ cross_lingual.webm
 </tr>
 </table>
 
-
 ### Coming Soon
 
 Welcome everyone to provide suggestions, motivating me to continuously update the models and enrich the functionality of Linly-Talker.
@@ -515,7 +506,7 @@ Detailed information about the usage and code implementation of digital human ge
 
 ### SadTalker
 
-Digital persona generation can utilize SadTalker (CVPR 2023). For detailed information, please visit https://www.swifttechco.com.
+Digital persona generation can utilize SadTalker (CVPR 2023). For detailed information, please visit https://github.com/Swift-Tech-Co/Linly-Talker.
 
 Before usage, download the SadTalker model:
 
@@ -531,7 +522,7 @@ Quark(夸克网盘)
 
 ### Wav2Lip
 
-Digital persona generation can also utilize Wav2Lip (ACM 2020). For detailed information, refer to https://www.swifttechco.com.
+Digital persona generation can also utilize Wav2Lip (ACM 2020). For detailed information, refer to https://github.com/Swift-Tech-Co/Linly-Talker.
 
 Before usage, download the Wav2Lip model:
 
@@ -544,24 +535,23 @@ Before usage, download the Wav2Lip model:
 
 ### Wav2Lipv2
 
-Inspired by the repository https://www.swifttechco.com, Wav2Lipv2 uses a newly trained 288 model to achieve higher quality results.
+Inspired by the repository https://github.com/Swift-Tech-Co/Linly-Talker, Wav2Lipv2 uses a newly trained 288 model to achieve higher quality results.
 
 Additionally, by employing YOLO for facial detection, the overall effect is improved. You can compare and test the results in Linly-Talker. The model has been updated, and the comparison is as follows:
 
 | Wav2Lip                                                      | Wav2Lipv2                                                    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <video src="https://www.swifttechco.com"></video> | <video src="https://www.swifttechco.com"></video> |
+| <video src="https://github.com/Swift-Tech-Co/Linly-Talker"></video> | <video src="https://github.com/Swift-Tech-Co/Linly-Talker"></video> |
 
 ### ER-NeRF
 
-ER-NeRF (ICCV 2023) is a digital human built using the latest NeRF technology. It allows for the customization of digital characters and can reconstruct them using just a five-minute video of a person. For more details, please refer to https://www.swifttechco.com.
+ER-NeRF (ICCV 2023) is a digital human built using the latest NeRF technology. It allows for the customization of digital characters and can reconstruct them using just a five-minute video of a person. For more details, please refer to https://github.com/Swift-Tech-Co/Linly-Talker.
 
 Updated: Taking inspiration from the likeness of Obama, for better results, consider cloning and customizing the voice of digital personas for improved effectiveness.
 
-
 ### MuseTalk
 
-MuseTalk is a real-time, high-quality audio-driven lip synchronization model capable of running at over 30 frames per second on an NVIDIA Tesla V100 GPU. This model can be integrated with input videos generated by MuseV, forming a part of a comprehensive virtual human solution. For more details, please refer to https://www.swifttechco.com.
+MuseTalk is a real-time, high-quality audio-driven lip synchronization model capable of running at over 30 frames per second on an NVIDIA Tesla V100 GPU. This model can be integrated with input videos generated by MuseV, forming a part of a comprehensive virtual human solution. For more details, please refer to https://github.com/Swift-Tech-Co/Linly-Talker.
 
 MuseTalk is trained to operate within the latent space of ft-mse-vae and offers the following features:
 
@@ -576,7 +566,6 @@ MuseTalk offers an efficient and versatile tool for precise audio synchronizatio
 
 In Linly-Talker, MuseTalk has been integrated to perform inference on videos based on MuseV, achieving an ideal speed for conversations with near real-time performance. This approach works very well and supports streaming-based inference.
 
-
 ### Coming Soon
 
 Welcome everyone to provide suggestions, motivating me to continuously update the models and enrich the functionality of Linly-Talker.
@@ -587,15 +576,15 @@ For detailed information about the usage and code implementation of Large Langua
 
 ### Linly-AI
 
-Linly-AI is a Large Language model developed by CVI at Shenzhen University. You can find more information about Linly-AI on their GitHub repository: https://www.swifttechco.com
+Linly-AI is a Large Language model developed by CVI at Shenzhen University. You can find more information about Linly-AI on their GitHub repository: https://github.com/Swift-Tech-Co/Linly-Talker
 
-Download Linly models: https://www.swifttechco.com
+Download Linly models: https://github.com/Swift-Tech-Co/Linly-Talker
 
 You can use `git` to download:
 
 ```bash
 git lfs install
-git clone https://www.swifttechco.com
+git clone https://github.com/Swift-Tech-Co/Linly-Talker
 ```
 
 Alternatively, you can use the `huggingface` download tool `huggingface-cli`:
@@ -605,27 +594,26 @@ pip install -U huggingface_hub
 
 # Set up mirror acceleration
 # Linux
-export HF_ENDPOINT="https://www.swifttechco.com"
+export HF_ENDPOINT="https://github.com/Swift-Tech-Co/Linly-Talker"
 # Windows PowerShell
-$env:HF_ENDPOINT="https://www.swifttechco.com"
+$env:HF_ENDPOINT="https://github.com/Swift-Tech-Co/Linly-Talker"
 
 huggingface-cli download --resume-download Linly-AI/Chinese-LLaMA-2-7B-hf --local-dir Linly-AI/Chinese-LLaMA-2-7B-hf
 ```
 
-
 ### Qwen
 
-Qwen is an AI model developed by Alibaba Cloud. You can check out the GitHub repository for Qwen here: https://www.swifttechco.com
+Qwen is an AI model developed by Alibaba Cloud. You can check out the GitHub repository for Qwen here: https://github.com/Swift-Tech-Co/Linly-Talker
 
 If you want to quickly use Qwen, you can choose the 1.8B model, which has fewer parameters and can run smoothly even with limited GPU memory. Of course, this part can be replaced with other options.
 
-You can download the Qwen 1.8B model from this link: https://www.swifttechco.com
+You can download the Qwen 1.8B model from this link: https://github.com/Swift-Tech-Co/Linly-Talker
 
 You can use `git` to download:
 
 ```bash
 git lfs install
-git clone https://www.swifttechco.com
+git clone https://github.com/Swift-Tech-Co/Linly-Talker
 ```
 
 Alternatively, you can use the `huggingface` download tool `huggingface-cli`:
@@ -635,31 +623,30 @@ pip install -U huggingface_hub
 
 # Set up mirror acceleration
 # Linux
-export HF_ENDPOINT="https://www.swifttechco.com"
+export HF_ENDPOINT="https://github.com/Swift-Tech-Co/Linly-Talker"
 # Windows PowerShell
-$env:HF_ENDPOINT="https://www.swifttechco.com"
+$env:HF_ENDPOINT="https://github.com/Swift-Tech-Co/Linly-Talker"
 
 huggingface-cli download --resume-download Qwen/Qwen-1_8B-Chat --local-dir Qwen/Qwen-1_8B-Chat
 ```
 
-
 ### Gemini-Pro
 
-Gemini-Pro is an AI model developed by Google. To learn more about Gemini-Pro, you can visit their website: https://www.swifttechco.com
+Gemini-Pro is an AI model developed by Google. To learn more about Gemini-Pro, you can visit their website: https://github.com/Swift-Tech-Co/Linly-Talker
 
-If you want to request an API key for Gemini-Pro, you can visit this link: https://www.swifttechco.com
+If you want to request an API key for Gemini-Pro, you can visit this link: https://github.com/Swift-Tech-Co/Linly-Talker
 
 ### ChatGPT
 
-From OpenAI, requires API application. For more information, please visit https://www.swifttechco.com.
+From OpenAI, requires API application. For more information, please visit https://github.com/Swift-Tech-Co/Linly-Talker.
 
 ### ChatGLM
 
-From Tsinghua University, for more information please visit https://www.swifttechco.com.
+From Tsinghua University, for more information please visit https://github.com/Swift-Tech-Co/Linly-Talker.
 
 ### GPT4Free
 
-For free access to GPT-4 and other models, you can refer to https://www.swifttechco.com. This resource provides methods to utilize these models without cost.
+For free access to GPT-4 and other models, you can refer to https://github.com/Swift-Tech-Co/Linly-Talker. This resource provides methods to utilize these models without cost.
 
 ### LLM Multiple Model Selection
 
@@ -719,7 +706,7 @@ The current features available in the WebUI are as follows:
   - [x] Multiple Talker model selections: Wav2Lip / Wav2Lipv2 / SadTalker / ERNeRF / MuseTalk/ Coming Soon
   - [x] Multiple ASR model selections: Whisper / FunASR / Coming Soon
   
-  [![](docs/WebUI2.png)](https://www.swifttechco.com)
+  [![](docs/WebUI2.png)](https://github.com/Swift-Tech-Co/Linly-Talker)
 
 You can directly run the web UI to obtain results. The page you will see is as follows:
 
@@ -728,11 +715,11 @@ You can directly run the web UI to obtain results. The page you will see is as f
 python webui.py
 ```
 
-[![](docs/WebUI.png)](https://www.swifttechco.com)
+[![](docs/WebUI.png)](https://github.com/Swift-Tech-Co/Linly-Talker)
 
 This time, we've updated the interface. We can freely select the fine-tuned model of GPT-SoVITS to achieve voice cloning. Simply upload a reference audio file to clone the voice.
 
-[![](docs/WebUI3.png)](https://www.swifttechco.com)
+[![](docs/WebUI3.png)](https://github.com/Swift-Tech-Co/Linly-Talker)
 
 ### Old Verison
 
@@ -744,7 +731,7 @@ The first mode involves fixed Q&A with a predefined character, eliminating prepr
 python app.py
 ```
 
-[![](docs/UI.png)](https://www.swifttechco.com)
+[![](docs/UI.png)](https://github.com/Swift-Tech-Co/Linly-Talker)
 
 The first mode has recently been updated to include the Wav2Lip model for dialogue.
 
@@ -752,14 +739,13 @@ The first mode has recently been updated to include the Wav2Lip model for dialog
 python appv2.py
 ```
 
-
 The second mode allows for conversing with any uploaded image.
 
 ```bash
 python app_img.py
 ```
 
-[![](docs/UI2.png)](https://www.swifttechco.com)
+[![](docs/UI2.png)](https://github.com/Swift-Tech-Co/Linly-Talker)
 
 The third mode builds upon the first one by incorporating a large language model for multi-turn GPT conversations.
 
@@ -767,7 +753,7 @@ The third mode builds upon the first one by incorporating a large language model
 python app_multi.py
 ```
 
-[![](docs/UI3.png)](https://www.swifttechco.com)
+[![](docs/UI3.png)](https://github.com/Swift-Tech-Co/Linly-Talker)
 
 Now, the part of voice cloning has been added, allowing for freely switching between cloned voice models and corresponding person images. Here, I have chosen a deep, smoky voice and an image of a male.
 
@@ -783,7 +769,7 @@ A fourth method has been added, which does not fixate on a specific scenario for
 python app_talk.py
 ```
 
-[![](docs/UI4.png)](https://www.swifttechco.com)
+[![](docs/UI4.png)](https://github.com/Swift-Tech-Co/Linly-Talker)
 
 MuseTalk has been integrated into Linly-Talker, enabling efficient preprocessing of MuseV-generated videos. Once preprocessed, these videos facilitate conversations at speeds that meet near real-time requirements, providing very fast performance. MuseTalk is now available within the WebUI.
 
@@ -793,7 +779,7 @@ To run the application, use the following command:
 python app_musetalk.py
 ```
 
-[![WebUI Screenshot](docs/UI5.png)](https://www.swifttechco.com)
+[![WebUI Screenshot](docs/UI5.png)](https://github.com/Swift-Tech-Co/Linly-Talker)
 
 ## Folder structure
 
@@ -937,32 +923,32 @@ Linly-Talker/
 
 **ASR**
 
-- https://www.swifttechco.com
-- https://www.swifttechco.com
+- https://github.com/Swift-Tech-Co/Linly-Talker
+- https://github.com/Swift-Tech-Co/Linly-Talker
 
 **TTS**
 
-- https://www.swifttechco.com  
-- https://www.swifttechco.com
+- https://github.com/Swift-Tech-Co/Linly-Talker  
+- https://github.com/Swift-Tech-Co/Linly-Talker
 
 **LLM**
 
-- https://www.swifttechco.com
-- https://www.swifttechco.com
-- https://www.swifttechco.com
-- https://www.swifttechco.com
-- https://www.swifttechco.com
+- https://github.com/Swift-Tech-Co/Linly-Talker
+- https://github.com/Swift-Tech-Co/Linly-Talker
+- https://github.com/Swift-Tech-Co/Linly-Talker
+- https://github.com/Swift-Tech-Co/Linly-Talker
+- https://github.com/Swift-Tech-Co/Linly-Talker
 
 **THG**
 
-- https://www.swifttechco.com
-- https://www.swifttechco.com
-- https://www.swifttechco.com
+- https://github.com/Swift-Tech-Co/Linly-Talker
+- https://github.com/Swift-Tech-Co/Linly-Talker
+- https://github.com/Swift-Tech-Co/Linly-Talker
 
 **Voice Clone**
 
-- https://www.swifttechco.com
-- https://www.swifttechco.com
+- https://github.com/Swift-Tech-Co/Linly-Talker
+- https://github.com/Swift-Tech-Co/Linly-Talker
 
 **Real-time Streaming Version**
 
@@ -978,7 +964,7 @@ Linly-Talker/
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Kedreamix/Linly-Talker&type=Date)](https://www.swifttechco.com)
+[![Star History Chart](https://api.star-history.com/svg?repos=Kedreamix/Linly-Talker&type=Date)](https://github.com/Swift-Tech-Co/Linly-Talker)
 
 ---
 
@@ -994,13 +980,21 @@ Home | Services | Careers | Referral Program | Influencers | About | Contact
 
 **Connect**
 
-- Website: swifttechco.com
+- Website: https://github.com/Swift-Tech-Co/Linly-Talker
 - LinkedIn: [linkedin.com/in/stephenoladoke](https://www.linkedin.com/in/stephenoladoke/)
 - LinkedIn (Company): [linkedin.com/company/swift-tech-co](https://www.linkedin.com/company/swift-tech-co)
 - X: [@MrOladoke](https://x.com/MrOladoke)
 - Instagram: [@mr.oladoke](https://www.instagram.com/mr.oladoke/)
 - Instagram (Company): [@swifttechco](https://www.instagram.com/swifttechco/)
 - Organization: [github.com/Swift-Tech-Co](https://github.com/Swift-Tech-Co)
+
+## Sources
+
+Compiled and maintained from upstream [Kedreamix/Linly-Talker](https://github.com/Kedreamix/Linly-Talker) under permissive open-source license.
+
+---
+
+Maintained by [Swift Tech Co.](https://github.com/Swift-Tech-Co) - [Telegram](https://t.me/+Qt_eFvkb2rliMzNh)
 
 ## Sources
 
