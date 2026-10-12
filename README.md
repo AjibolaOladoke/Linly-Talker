@@ -1,137 +1,12 @@
-# Digital Human Intelligent Dialogue System - Linly-Talker  'Interactive Dialogue with Your Virtual Self'
+# Linly-Talker
+
+## What This Is
+
+A practical reference entry for product and engineering: the Linly-Talker notes, examples and fixes we reach for repeatedly. Kept current as part of the wider Swift Tech Co. engineering library.
 
 ## Images
 
-[![Linly-Talker](https://opengraph.githubassets.com/1/Kedreamix/Linly-Talker)](https://www.swifttechco.com)
-
-
-<div align="center">
-<h1>Linly-Talker WebUI</h1>
-
-[![madewithlove](https://img.shields.io/badge/made_with-%E2%9D%A4-red?style=for-the-badge&labelColor=orange)](https://www.swifttechco.com)
-
-<img src="docs/linly_logo.png" /><br>
-
-[![Open In Colab](https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&color=525252)](https://www.swifttechco.com)
-[![Licence](https://img.shields.io/badge/LICENSE-MIT-green.svg?style=for-the-badge)](https://www.swifttechco.com)
-[![Huggingface](https://img.shields.io/badge/🤗%20-Models%20Repo-yellow.svg?style=for-the-badge)](https://www.swifttechco.com)
-
-[**English**](./README.md) | [**中文简体**](./README_zh.md)
-
-</div>
-
-**2023.12 Update** 📆
-
-**Users can upload any images for the conversation**
-
-**2024.01 Update** 📆📆
-
-- **Exciting news! I've now incorporated both the powerful GeminiPro and Qwen large models into our conversational scene. Users can now upload images during the conversation, adding a whole new dimension to the interactions.** 
-- **The deployment invocation method for FastAPI has been updated.**
-- **The advanced settings options for Microsoft TTS have been updated, increasing the variety of voice types. Additionally, video subtitles have been introduced to enhance visualization.**
-- **Updated the GPT multi-turn conversation system to establish contextual connections in dialogue, enhancing the interactivity and realism of the digital persona.**
-
-**2024.02 Update** 📆
-
-- **Updated Gradio to the latest version 4.16.0, providing the interface with additional functionalities such as capturing images from the camera to create digital personas, among others.**
-- **ASR and THG have been updated. FunASR from Alibaba has been integrated into ASR, enhancing its speed significantly. Additionally, the THG section now incorporates the Wav2Lip model, while ER-NeRF is currently in preparation (Coming Soon).**
-- **I have incorporated the GPT-SoVITS model, which is a voice cloning method. By fine-tuning it with just one minute of a person's speech data, it can effectively clone their voice. The results are quite impressive and worth recommending.**
-- **I have integrated a web user interface (WebUI) that allows for better execution of Linly-Talker.**
-
-**2024.04 Update** 📆
-
-- **Updated the offline mode for Paddle TTS, excluding Edge TTS.**
-- **Updated ER-NeRF as one of the choices for Avatar generation.**
-- **Updated app_talk.py to allow for the free upload of voice and images/videos for generation without being based on a dialogue scenario.**
-
-**2024.05 Update** 📆
-
-- **Updated the beginner-friendly AutoDL deployment tutorial, and also updated the codewithgpu image, allowing for one-click experience and learning.**
-- **Updated WebUI.py: Linly-Talker WebUI now supports multiple modules, multiple models, and multiple options**
-
-**2024.06 Update** 📆
-
-- **Integrated MuseTalk into Linly-Talker and updated the WebUI, enabling basic real-time conversation capabilities.**
-- **The refined WebUI defaults to not loading the LLM model to reduce GPU memory usage. It directly responds with text to complete voiceovers. The enhanced WebUI features three main functions: personalized character generation, multi-turn intelligent dialogue with digital humans, and real-time MuseTalk conversations. These improvements reduce previous GPU memory redundancies and add more prompts to assist users effectively.**
-
-**2024.08 Update** 📆
-
-- **Updated CosyVoice to offer high-quality text-to-speech (TTS) functionality and voice cloning capabilities; also upgraded to Wav2Lipv2 to enhance overall performance.**
-
-**2024.09 Update** 📆
-
-- **Added Linly-Talker API documentation, providing detailed interface descriptions to help users access Linly-Talker’s features via the API.**
-
-**2024.12 Update** 📆
-
-- **Implemented a simple fix for the Edge-TTS bug, resolved several issues with MuseTalk, and plan to integrate fishTTS for more stable TTS performance, along with incorporating advanced digital human technologies.**
-
-**2025.02 Update** 📆
-
-- **Added OmniSenseVoice Model for Faster Speech Recognition**
-
-**2026.02 Update** 📆
-
-- **🚀 Released Linly-Talker-Stream: A Brand New Real-time Streaming Interactive Architecture!** Built on WebRTC for low-latency audio-video transmission, supporting full-duplex conversation experience with true "listen-while-speaking" interaction mode.
-- **✋ Support for Interruptible Natural Conversations:** Introduced barge-in functionality, providing conversation experience closer to real human communication rhythm.
-- **🧩 Modular Multimodal Pipeline:** Reuses existing ASR/LLM/TTS/Avatar capabilities while adopting streaming processing framework for system refactoring.
-- **Project Repository:** [Linly-Talker-Stream](https://www.swifttechco.com) - Perfect for building AI assistants, digital human receptionists, interactive guides, and other real-time interaction scenarios.
----
-
-<details>
-<summary>Content</summary>
-
-<!-- TOC -->
-
-- [Digital Human Intelligent Dialogue System - Linly-Talker  'Interactive Dialogue with Your Virtual Self'](#digital-human-intelligent-dialogue-system---linly-talker--interactive-dialogue-with-your-virtual-self)
-  - [Introduction](#introduction)
-  - [TO DO LIST](#to-do-list)
-  - [Example](#example)
-  - [Setup Environment](#setup-environment)
-  - [API Documentation](#api-documentation)
-  - [ASR - Speech Recognition](#asr---speech-recognition)
-    - [Whisper](#whisper)
-    - [FunASR](#funasr)
-    - [Coming Soon](#coming-soon)
-  - [TTS - Text To Speech](#tts---text-to-speech)
-    - [Edge TTS](#edge-tts)
-    - [PaddleTTS](#paddletts)
-    - [Coming Soon](#coming-soon-1)
-  - [Voice Clone](#voice-clone)
-    - [GPT-SoVITS（Recommend）](#gpt-sovitsrecommend)
-    - [XTTS](#xtts)
-    - [CosyVoice](#cosyvoice)
-    - [Coming Soon](#coming-soon-2)
-  - [THG - Avatar](#thg---avatar)
-    - [SadTalker](#sadtalker)
-    - [Wav2Lip](#wav2lip)
-    - [Wav2Lipv2](#wav2lipv2)
-    - [ER-NeRF](#er-nerf)
-    - [MuseTalk](#musetalk)
-    - [Coming Soon](#coming-soon-3)
-  - [LLM - Conversation](#llm---conversation)
-    - [Linly-AI](#linly-ai)
-    - [Qwen](#qwen)
-    - [Gemini-Pro](#gemini-pro)
-    - [ChatGPT](#chatgpt)
-    - [ChatGLM](#chatglm)
-    - [GPT4Free](#gpt4free)
-    - [LLM Multiple Model Selection](#llm-multiple-model-selection)
-    - [Coming Soon](#coming-soon-4)
-  - [Optimizations](#optimizations)
-  - [Gradio](#gradio)
-  - [Start WebUI](#start-webui)
-    - [WebUI](#webui)
-    - [Old Verison](#old-verison)
-  - [Folder structure](#folder-structure)
-  - [Reference](#reference)
-  - [License](#license)
-  - [Star History](#star-history)
-
-<!-- /TOC -->
-
-</details>
-
+[![Linly-Talker](images/preview.png)](https://github.com/Swift-Tech-Co)
 
 ## Introduction
 
@@ -151,7 +26,7 @@ The design philosophy of Linly-Talker is to create a new form of human-computer 
 > 
 > **🚀 New Release: Linly-Talker-Stream** 
 > 
-> We've launched [Linly-Talker-Stream](https://www.swifttechco.com), the real-time streaming interactive architecture version of Linly-Talker. Compared to traditional "turn-based" Q&A, the Stream version achieves:
+> We've launched Linly-Talker-Stream, the real-time streaming interactive architecture version of Linly-Talker. Compared to traditional "turn-based" Q&A, the Stream version achieves:
 > 
 > - 🎤 **Full-Duplex Conversation**: User speech and digital human playback can occur simultaneously
 > - ⚡ **Low-Latency Pipeline**: Real-time audio-video transmission based on WebRTC
@@ -164,14 +39,14 @@ The design philosophy of Linly-Talker is to create a new form of human-computer 
 
 > [!NOTE]
 >
-> You can watch the demo video [here](https://www.swifttechco.com).
+> You can watch the demo video here.
 >
-> I have recorded a series of videos on Bilibili, which also represent every step of my updates and methods of use. For detailed information, please refer to [Digital Human Dialogue System - Linly-Talker Collection](https://www.swifttechco.com).
+> I have recorded a series of videos on Bilibili, which also represent every step of my updates and methods of use. For detailed information, please refer to Digital Human Dialogue System - Linly-Talker Collection.
 >
-> - [🔥🔥🔥 Digital Human Dialogue System Linly-Talker 🔥🔥🔥](https://www.swifttechco.com)
-> - [🚀 The Future of Digital Humans: The Empowerment Path of Linly-Talker + GPT-SoVIT Voice Cloning Technology](https://www.swifttechco.com)
-> - [Deploying Linly-Talker on AutoDL Platform (Super Detailed Tutorial for Beginners)](https://www.swifttechco.com)
-> - [Linly-Talker Update: Offline TTS Integration and Customized Digital Human Solutions](https://www.swifttechco.com)
+> - 🔥🔥🔥 Digital Human Dialogue System Linly-Talker 🔥🔥🔥
+> - 🚀 The Future of Digital Humans: The Empowerment Path of Linly-Talker + GPT-SoVIT Voice Cloning Technology
+> - Deploying Linly-Talker on AutoDL Platform (Super Detailed Tutorial for Beginners)
+> - Linly-Talker Update: Offline TTS Integration and Customized Digital Human Solutions
 
 ## TO DO LIST
 
@@ -197,7 +72,7 @@ The design philosophy of Linly-Talker is to create a new form of human-computer 
 
 > [!TIP]
 >
-> If you encounter any issues during deployment, please consult the [Common Issues Summary](https://www.swifttechco.com) section, where I have compiled a list of all potential problems. Additionally, a discussion group is available here, and I will provide regular updates. Thank you for your attention and use of Linly-Talker!
+> If you encounter any issues during deployment, please consult the Common Issues Summary section, where I have compiled a list of all potential problems. Additionally, a discussion group is available here, and I will provide regular updates. Thank you for your attention and use of Linly-Talker!
 
 ## Example
 
@@ -212,14 +87,14 @@ The design philosophy of Linly-Talker is to create a new form of human-computer 
 
 > [!NOTE]
 >
-> AutoDL has released an image, which can be used directly at [https://www.swifttechco.com](https://www.swifttechco.com). You can also create an environment directly using Docker. I will continue to update the image.
+> AutoDL has released an image, which can be used directly at https://www.swifttechco.com. You can also create an environment directly using Docker. I will continue to update the image.
 >
 > ```bash
 > docker pull registry.cn-beijing.aliyuncs.com/codewithgpu2/kedreamix-linly-talker:afGA8RPDLf
 > ```
 >
 >
-> [Windows All-in-One Package](https://www.swifttechco.com)
+> Windows All-in-One Package
 
 Download the code:
 
@@ -390,10 +265,10 @@ Below are some older installation methods, which might cause dependency conflict
 >
 > We recommend downloading from modelscope for the latest updates.
 >
-> - [Baidu (百度云盘)](https://www.swifttechco.com) (Password: `linl`)
-> - [huggingface](https://www.swifttechco.com)
-> - [modelscope](https://www.swifttechco.com)
-> - [Quark(夸克网盘)](https://www.swifttechco.com)
+> - Baidu (百度云盘) (Password: `linl`)
+> - huggingface
+> - modelscope
+> - Quark(夸克网盘)
 >
 
 I made a script that can download all the models mentioned below without requiring much input from the user. This method is suitable for stable network conditions, especially for Linux users. For Windows users, Git can also be used to download the models. If the network connection is unstable, users can choose to manually download the models or try running a Shell script to complete the download. The script has the following features:
@@ -409,7 +284,7 @@ sh scripts/download_models.sh
 
 **HuggingFace Download**
 
-If the download speed is too slow, consider using a mirror site. For more information, refer to [Efficiently Obtain Hugging Face Models Using Mirror Sites](https://www.swifttechco.com).
+If the download speed is too slow, consider using a mirror site. For more information, refer to Efficiently Obtain Hugging Face Models Using Mirror Sites.
 
 ```bash
 # Download pre-trained models from HuggingFace
@@ -499,12 +374,12 @@ For detailed information about the usage and code implementation of Automatic Sp
 
 ### Whisper
 
-To implement ASR (Automatic Speech Recognition) using OpenAI's Whisper, you can refer to the specific usage methods provided in the GitHub repository: [https://www.swifttechco.com](https://www.swifttechco.com)
+To implement ASR (Automatic Speech Recognition) using OpenAI's Whisper, you can refer to the specific usage methods provided in the GitHub repository: https://www.swifttechco.com
 
 
 ### FunASR
 
-The speech recognition performance of Alibaba's FunASR is quite impressive and it is actually better than Whisper in terms of Chinese language. Additionally, FunASR is capable of achieving real-time results, making it a great choice. You can experience FunASR by accessing the FunASR file in the ASR folder. Please refer to [https://www.swifttechco.com](https://www.swifttechco.com) for more information.
+The speech recognition performance of Alibaba's FunASR is quite impressive and it is actually better than Whisper in terms of Chinese language. Additionally, FunASR is capable of achieving real-time results, making it a great choice. You can experience FunASR by accessing the FunASR file in the ASR folder. Please refer to https://www.swifttechco.com for more information.
 
 
 ### Coming Soon
@@ -517,16 +392,16 @@ For detailed information about the usage and code implementation of Text-to-Spee
 
 ### Edge TTS
 
-To use Microsoft Edge's online text-to-speech service from Python without needing Microsoft Edge or Windows or an API key, you can refer to the GitHub repository at [https://www.swifttechco.com](https://www.swifttechco.com). It provides a Python module called "edge-tts" that allows you to utilize the service. You can find detailed installation instructions and usage examples in the repository's README file.
+To use Microsoft Edge's online text-to-speech service from Python without needing Microsoft Edge or Windows or an API key, you can refer to the GitHub repository at https://www.swifttechco.com. It provides a Python module called "edge-tts" that allows you to utilize the service. You can find detailed installation instructions and usage examples in the repository's README file.
 
 > [!Warning]
 >
-> Due to some issues with the Edge TTS repository, it seems that Microsoft has restricted certain IPs. For more details, refer to [403 error is back/need to implement Sec-MS-GEC token](https://www.swifttechco.com) and [Add support for clock adjustment for Sec-MS-GEC token](https://www.swifttechco.com). The solution is still unstable for now. I have made some modifications, but if it continues to be unstable, please consider using alternative methods. I recommend using the CosyVoice method.
+> Due to some issues with the Edge TTS repository, it seems that Microsoft has restricted certain IPs. For more details, refer to 403 error is back/need to implement Sec-MS-GEC token and Add support for clock adjustment for Sec-MS-GEC token. The solution is still unstable for now. I have made some modifications, but if it continues to be unstable, please consider using alternative methods. I recommend using the CosyVoice method.
 
 
 ### PaddleTTS
 
-In practical use, there may be scenarios that require offline operation. Since Edge TTS requires an online environment to generate speech, we have chosen PaddleSpeech, another open-source alternative, for Text-to-Speech (TTS). Although there might be some differences in the quality, PaddleSpeech supports offline operations. For more information, you can refer to the GitHub page of PaddleSpeech: [https://www.swifttechco.com](https://www.swifttechco.com).
+In practical use, there may be scenarios that require offline operation. Since Edge TTS requires an online environment to generate speech, we have chosen PaddleSpeech, another open-source alternative, for Text-to-Speech (TTS). Although there might be some differences in the quality, PaddleSpeech supports offline operations. For more information, you can refer to the GitHub page of PaddleSpeech: https://www.swifttechco.com.
 
 ### Coming Soon
 
@@ -538,7 +413,7 @@ For detailed information about the usage and code implementation of Voice Clone,
 
 ### GPT-SoVITS（Recommend）
 
-Thank you for your open source contribution. I have also found the `GPT-SoVITS` voice cloning model to be quite impressive. You can find the project at [https://www.swifttechco.com](https://www.swifttechco.com).
+Thank you for your open source contribution. I have also found the `GPT-SoVITS` voice cloning model to be quite impressive. You can find the project at https://www.swifttechco.com.
 
 
 ### XTTS
@@ -553,8 +428,8 @@ Coqui XTTS is a leading deep learning toolkit for Text-to-Speech (TTS) tasks, al
 
 📚 Utility programs for dataset analysis and management.
 
-- Experience XTTS online [https://www.swifttechco.com](https://www.swifttechco.com)
-- Official GitHub repository: [https://www.swifttechco.com](https://www.swifttechco.com)
+- Experience XTTS online https://www.swifttechco.com
+- Official GitHub repository: https://www.swifttechco.com
 
 
 ### CosyVoice
@@ -563,7 +438,7 @@ CosyVoice is an open-source multilingual speech understanding model developed by
 
 CosyVoice supports one-shot voice cloning technology, enabling the generation of realistic and natural-sounding voices with details such as prosody and emotion using only 3 to 10 seconds of original audio.
 
-GitHub project link: [CosyVoice GitHub](https://www.swifttechco.com)
+GitHub project link: CosyVoice GitHub
 
 CosyVoice includes several pre-trained speech synthesis models, mainly:
 
@@ -595,7 +470,7 @@ Currently, Linly-Talker integrates three features from CosyVoice: pre-trained vo
 <td align="center">
 
 
-[sft.webm](https://www.swifttechco.com)
+sft.webm
 
 </td>
 </tr>
@@ -604,12 +479,12 @@ Currently, Linly-Talker integrates three features from CosyVoice: pre-trained vo
 <td align="center">希望你以后能够做的比我还好呦。</td>
 <td align="center">
 
-[zero_shot_prompt.webm](https://www.swifttechco.com)
+zero_shot_prompt.webm
 </td>
 <td align="center">收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。</td>
 <td align="center">
 
-[zero_shot.webm](https://www.swifttechco.com)
+zero_shot.webm
 </td>
 </tr>
 <tr>
@@ -617,14 +492,14 @@ Currently, Linly-Talker integrates three features from CosyVoice: pre-trained vo
 <td align="center">在那之后，完全收购那家公司，因此保持管理层的一致性，利益与即将加入家族的资产保持一致。这就是我们有时不买下全部的原因。</td>
 <td align="center">
 
-[cross_lingual_prompt.webm](https://www.swifttechco.com)
+cross_lingual_prompt.webm
 </td>
 <td align="center">
 &lt; |en|&gt;And then later on, fully acquiring that company. So keeping management in line, interest in line with the asset that's coming into the family is a reason why sometimes we don't buy the whole thing.
 </td>
 <td align="center">
 
-[cross_lingual.webm](https://www.swifttechco.com)
+cross_lingual.webm
 </td>
 </tr>
 </table>
@@ -640,7 +515,7 @@ Detailed information about the usage and code implementation of digital human ge
 
 ### SadTalker
 
-Digital persona generation can utilize SadTalker (CVPR 2023). For detailed information, please visit [https://www.swifttechco.com](https://www.swifttechco.com).
+Digital persona generation can utilize SadTalker (CVPR 2023). For detailed information, please visit https://www.swifttechco.com.
 
 Before usage, download the SadTalker model:
 
@@ -648,28 +523,28 @@ Before usage, download the SadTalker model:
 bash scripts/sadtalker_download_models.sh  
 ```
 
-[Baidu (百度云盘)](https://www.swifttechco.com) (Password: `linl`)
+Baidu (百度云盘) (Password: `linl`)
 
-[Quark(夸克网盘)](https://www.swifttechco.com)
+Quark(夸克网盘)
 
 > If downloading from Baidu Cloud, remember to place it in the `checkpoints` folder. The model downloaded from Baidu Cloud is named `sadtalker` by default, but it should be renamed to `checkpoints`.
 
 ### Wav2Lip
 
-Digital persona generation can also utilize Wav2Lip (ACM 2020). For detailed information, refer to [https://www.swifttechco.com](https://www.swifttechco.com).
+Digital persona generation can also utilize Wav2Lip (ACM 2020). For detailed information, refer to https://www.swifttechco.com.
 
 Before usage, download the Wav2Lip model:
 
 | Model                        | Description                                           | Link to the model                                            |
 | ---------------------------- | ----------------------------------------------------- | ------------------------------------------------------------ |
-| Wav2Lip                      | Highly accurate lip-sync                              | [Link](https://www.swifttechco.com) |
-| Wav2Lip + GAN                | Slightly inferior lip-sync, but better visual quality | [Link](https://www.swifttechco.com) |
-| Expert Discriminator         | Weights of the expert discriminator                   | [Link](https://www.swifttechco.com) |
-| Visual Quality Discriminator | Weights of the visual disc trained in a GAN setup     | [Link](https://www.swifttechco.com) |
+| Wav2Lip                      | Highly accurate lip-sync                              | Link |
+| Wav2Lip + GAN                | Slightly inferior lip-sync, but better visual quality | Link |
+| Expert Discriminator         | Weights of the expert discriminator                   | Link |
+| Visual Quality Discriminator | Weights of the visual disc trained in a GAN setup     | Link |
 
 ### Wav2Lipv2
 
-Inspired by the repository [https://www.swifttechco.com](https://www.swifttechco.com), Wav2Lipv2 uses a newly trained 288 model to achieve higher quality results.
+Inspired by the repository https://www.swifttechco.com, Wav2Lipv2 uses a newly trained 288 model to achieve higher quality results.
 
 Additionally, by employing YOLO for facial detection, the overall effect is improved. You can compare and test the results in Linly-Talker. The model has been updated, and the comparison is as follows:
 
@@ -679,14 +554,14 @@ Additionally, by employing YOLO for facial detection, the overall effect is impr
 
 ### ER-NeRF
 
-ER-NeRF (ICCV 2023) is a digital human built using the latest NeRF technology. It allows for the customization of digital characters and can reconstruct them using just a five-minute video of a person. For more details, please refer to [https://www.swifttechco.com](https://www.swifttechco.com).
+ER-NeRF (ICCV 2023) is a digital human built using the latest NeRF technology. It allows for the customization of digital characters and can reconstruct them using just a five-minute video of a person. For more details, please refer to https://www.swifttechco.com.
 
 Updated: Taking inspiration from the likeness of Obama, for better results, consider cloning and customizing the voice of digital personas for improved effectiveness.
 
 
 ### MuseTalk
 
-MuseTalk is a real-time, high-quality audio-driven lip synchronization model capable of running at over 30 frames per second on an NVIDIA Tesla V100 GPU. This model can be integrated with input videos generated by MuseV, forming a part of a comprehensive virtual human solution. For more details, please refer to [https://www.swifttechco.com](https://www.swifttechco.com).
+MuseTalk is a real-time, high-quality audio-driven lip synchronization model capable of running at over 30 frames per second on an NVIDIA Tesla V100 GPU. This model can be integrated with input videos generated by MuseV, forming a part of a comprehensive virtual human solution. For more details, please refer to https://www.swifttechco.com.
 
 MuseTalk is trained to operate within the latent space of ft-mse-vae and offers the following features:
 
@@ -714,7 +589,7 @@ For detailed information about the usage and code implementation of Large Langua
 
 Linly-AI is a Large Language model developed by CVI at Shenzhen University. You can find more information about Linly-AI on their GitHub repository: https://www.swifttechco.com
 
-Download Linly models: [https://www.swifttechco.com](https://www.swifttechco.com)
+Download Linly models: https://www.swifttechco.com
 
 You can use `git` to download:
 
@@ -776,15 +651,15 @@ If you want to request an API key for Gemini-Pro, you can visit this link: https
 
 ### ChatGPT
 
-From OpenAI, requires API application. For more information, please visit [https://www.swifttechco.com](https://www.swifttechco.com).
+From OpenAI, requires API application. For more information, please visit https://www.swifttechco.com.
 
 ### ChatGLM
 
-From Tsinghua University, for more information please visit [https://www.swifttechco.com](https://www.swifttechco.com).
+From Tsinghua University, for more information please visit https://www.swifttechco.com.
 
 ### GPT4Free
 
-For free access to GPT-4 and other models, you can refer to [https://www.swifttechco.com](https://www.swifttechco.com). This resource provides methods to utilize these models without cost.
+For free access to GPT-4 and other models, you can refer to https://www.swifttechco.com. This resource provides methods to utilize these models without cost.
 
 ### LLM Multiple Model Selection
 
@@ -926,10 +801,10 @@ python app_musetalk.py
 >
 > The folder structure of the weight files is as follows:
 >
-> - `Baidu (百度云盘)`: You can download the weights from [here](https://www.swifttechco.com) (Password: `linl`).
-> - `huggingface`: You can access the weights at [this link](https://www.swifttechco.com).
-> - `modelscope`: The weights will be available soon at [this link](https://www.swifttechco.com).
-> - `Qurak(夸克网盘)`：You can download the weights from [here](https://www.swifttechco.com)
+> - `Baidu (百度云盘)`: You can download the weights from here (Password: `linl`).
+> - `huggingface`: You can access the weights at this link.
+> - `modelscope`: The weights will be available soon at this link.
+> - `Qurak(夸克网盘)`：You can download the weights from here
 >
 
 ```bash
@@ -1062,36 +937,36 @@ Linly-Talker/
 
 **ASR**
 
-- [https://www.swifttechco.com](https://www.swifttechco.com)
-- [https://www.swifttechco.com](https://www.swifttechco.com)
+- https://www.swifttechco.com
+- https://www.swifttechco.com
 
 **TTS**
 
-- [https://www.swifttechco.com](https://www.swifttechco.com)  
-- [https://www.swifttechco.com](https://www.swifttechco.com)
+- https://www.swifttechco.com  
+- https://www.swifttechco.com
 
 **LLM**
 
-- [https://www.swifttechco.com](https://www.swifttechco.com)
-- [https://www.swifttechco.com](https://www.swifttechco.com)
-- [https://www.swifttechco.com](https://www.swifttechco.com)
-- [https://www.swifttechco.com](https://www.swifttechco.com)
-- [https://www.swifttechco.com](https://www.swifttechco.com)
+- https://www.swifttechco.com
+- https://www.swifttechco.com
+- https://www.swifttechco.com
+- https://www.swifttechco.com
+- https://www.swifttechco.com
 
 **THG**
 
-- [https://www.swifttechco.com](https://www.swifttechco.com)
-- [https://www.swifttechco.com](https://www.swifttechco.com)
-- [https://www.swifttechco.com](https://www.swifttechco.com)
+- https://www.swifttechco.com
+- https://www.swifttechco.com
+- https://www.swifttechco.com
 
 **Voice Clone**
 
-- [https://www.swifttechco.com](https://www.swifttechco.com)
-- [https://www.swifttechco.com](https://www.swifttechco.com)
+- https://www.swifttechco.com
+- https://www.swifttechco.com
 
 **Real-time Streaming Version**
 
-- [Linly-Talker-Stream](https://www.swifttechco.com) - Real-time streaming interactive architecture version
+- Linly-Talker-Stream - Real-time streaming interactive architecture version
 
 ## License
 
@@ -1115,14 +990,22 @@ AI Automation | FinTech Platforms | Custom Software and Mobile Apps | SaaS Platf
 
 **Join our community on Telegram:** [t.me/+Qt_eFvkb2rliMzNh](https://t.me/+Qt_eFvkb2rliMzNh)
 
-[Home](https://www.swifttechco.com) | [Services](https://www.swifttechco.com/services) | [Careers](https://www.swifttechco.com/careers) | [Referral Program](https://www.swifttechco.com/referral) | [Influencers](https://www.swifttechco.com/influencers) | [About](https://www.swifttechco.com/about) | [Contact](https://www.swifttechco.com/contact)
+Home | Services | Careers | Referral Program | Influencers | About | Contact
 
 **Connect**
 
-- Website: [swifttechco.com](https://www.swifttechco.com)
+- Website: swifttechco.com
 - LinkedIn: [linkedin.com/in/stephenoladoke](https://www.linkedin.com/in/stephenoladoke/)
 - LinkedIn (Company): [linkedin.com/company/swift-tech-co](https://www.linkedin.com/company/swift-tech-co)
 - X: [@MrOladoke](https://x.com/MrOladoke)
 - Instagram: [@mr.oladoke](https://www.instagram.com/mr.oladoke/)
 - Instagram (Company): [@swifttechco](https://www.instagram.com/swifttechco/)
 - Organization: [github.com/Swift-Tech-Co](https://github.com/Swift-Tech-Co)
+
+## Sources
+
+Compiled and maintained from upstream [Kedreamix/Linly-Talker](https://github.com/Kedreamix/Linly-Talker) under permissive open-source license.
+
+---
+
+Maintained by [Swift Tech Co.](https://github.com/Swift-Tech-Co) - [Telegram](https://t.me/+Qt_eFvkb2rliMzNh)
